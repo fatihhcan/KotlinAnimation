@@ -1,5 +1,6 @@
 package com.example.animation
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.animation.AnimationUtils
@@ -32,6 +33,12 @@ class MainActivity : AppCompatActivity() {
         emailText.startAnimation(threeAnim)
         passwordText.startAnimation(threeAnim)
         button.startAnimation(fourAnim)
+        var intentHome = Intent(this, HomeActivity::class.java)
+
+        val loginButton = findViewById<Button>(R.id.button)
+        loginButton.setOnClickListener {
+        startActivity(intentHome)
+        }
 
     }
 }
