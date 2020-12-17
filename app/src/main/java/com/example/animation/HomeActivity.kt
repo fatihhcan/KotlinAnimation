@@ -8,9 +8,8 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.BaseAdapter
-import android.widget.ImageView
-import android.widget.TextView
+import android.view.animation.AnimationUtils
+import android.widget.*
 import kotlinx.android.synthetic.main.activity_home.*
 
 class HomeActivity : AppCompatActivity() {
@@ -47,6 +46,14 @@ class HomeActivity : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+
+
+        val fourAnim = AnimationUtils.loadAnimation(this,R.anim.fouranim)
+        var photos = findViewById(R.id.gridView) as GridView
+
+        photos.startAnimation(fourAnim)
+
+
 
         for(i in names.indices){
             modalList.add(Modal(names[i],images[i]))
